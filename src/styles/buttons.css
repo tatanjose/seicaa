@@ -51,13 +51,3 @@
     color: var(--color-primary);
   }
 }
-
-.spinner {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, .35);
-  border-top-color: var(--color-white);
-  animation: spin 600ms linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }

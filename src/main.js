@@ -9,14 +9,12 @@ import { initReveal } from './modules/reveal.js';
 import { initCounters } from './modules/counters.js';
 import { initProjects } from './modules/projects.js';
 import { initModal } from './modules/modal.js';
-import { initContactForm } from './modules/contact-form.js';
 
 initNavbar();
 initReveal();
 initCounters();
 initModal();
 initProjects();
-initContactForm();
 
 // Año actual en el pie de página
 const year = document.getElementById('footer-year');

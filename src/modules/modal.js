@@ -62,12 +62,13 @@ function buildGallery(proyecto) {
   }
 
   const several = total > 1;
-  media.replaceChildren(
+  // filter(Boolean): quita los botones que no aplican cuando hay una sola foto
+  media.replaceChildren(...[
     el('img', { class: 'modal-photo', src: proyecto.fotos[0], alt: '', decoding: 'async' }),
     several && el('button', { class: 'gallery-nav prev', type: 'button', 'aria-label': 'Foto anterior', 'data-step': '-1' }, icon('fas fa-chevron-left')),
     several && el('button', { class: 'gallery-nav next', type: 'button', 'aria-label': 'Foto siguiente', 'data-step': '1' }, icon('fas fa-chevron-right')),
     several && el('span', { class: 'gallery-counter', id: 'modal-counter', 'aria-live': 'polite' }),
-  );
+  ].filter(Boolean));
 
   thumbs.hidden = !several;
   thumbs.replaceChildren(

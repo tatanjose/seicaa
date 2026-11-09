@@ -228,83 +228,33 @@
           <h2 class="section-title" id="contact-title">¿Tienes un <span class="accent">proyecto</span>?</h2>
           <p class="section-subtitle">Contáctanos y nuestro equipo te brindará la asesoría que necesitas.</p>
         </header>
-        <div class="contact-grid">
-          <div class="contact-info reveal">
-            <h3>Información de contacto</h3>
-            <p>Estamos disponibles para atenderte y responder todas tus consultas.</p>
-            <!-- ✏️ EDITA: datos de contacto (recuerda cambiarlos también en el footer y en src/config.js) -->
-            <ul class="contact-items">
-              <li class="contact-item">
-                <div class="icon-box"><i class="fas fa-phone" aria-hidden="true"></i></div>
-                <div class="text">
-                  <strong>Teléfono</strong>
-                  <a href="tel:+50240739801">+502 4073-9801</a>
-                </div>
-              </li>
-              <li class="contact-item">
-                <div class="icon-box"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-                <div class="text">
-                  <strong>Email</strong>
-                  <a href="mailto:seicaa@gmail.com">seicaa@gmail.com</a>
-                </div>
-              </li>
-              <li class="contact-item">
-                <div class="icon-box"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-                <div class="text">
-                  <strong>Dirección</strong>
-                  <a href="https://www.google.com/maps/search/?api=1&amp;query=7ma.+Avenida+4-41+Zona+4+Chiantla+Huehuetenango" target="_blank" rel="noopener">7ma. Avenida 4-41, Zona 4, Chuscaj Chiantla, Huehuetenango</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="reveal">
-            <form class="contact-form" id="contact-form" novalidate>
-              <h3><i class="fas fa-paper-plane" aria-hidden="true"></i>Envíanos un mensaje</h3>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="cf-nombre">Nombre completo *</label>
-                  <input type="text" id="cf-nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" aria-describedby="err-nombre" required />
-                  <span class="error-msg" id="err-nombre">Escribe tu nombre.</span>
-                </div>
-                <div class="form-group">
-                  <label for="cf-email">Correo electrónico *</label>
-                  <input type="email" id="cf-email" name="email" placeholder="correo@ejemplo.com" autocomplete="email" inputmode="email" aria-describedby="err-email" required />
-                  <span class="error-msg" id="err-email">Escribe un correo válido, por ejemplo nombre@gmail.com.</span>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="cf-telefono">Teléfono</label>
-                  <input type="tel" id="cf-telefono" name="telefono" placeholder="+502 0000-0000" autocomplete="tel" />
-                </div>
-                <div class="form-group">
-                  <label for="cf-servicio">Servicio de interés *</label>
-                  <select id="cf-servicio" name="servicio" aria-describedby="err-servicio" required>
-                    <option value="">Selecciona un servicio</option>
-                    <option>Construcción</option>
-                    <option>Remodelación</option>
-                    <option>Venta de agregados</option>
-                    <option>Renta de maquinaria</option>
-                    <option>Asesoría técnica</option>
-                    <option>Ingeniería civil</option>
-                    <option>Otro</option>
-                  </select>
-                  <span class="error-msg" id="err-servicio">Selecciona un servicio.</span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="cf-mensaje">Mensaje *</label>
-                <textarea id="cf-mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." aria-describedby="err-mensaje" required></textarea>
-                <span class="error-msg" id="err-mensaje">Escribe tu mensaje (al menos 10 caracteres).</span>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block" id="cf-submit">
-                <i class="fas fa-paper-plane" aria-hidden="true"></i> <span>Enviar mensaje</span>
-              </button>
-              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-            </form>
-          </div>
-        </div>
+        <!-- ✏️ EDITA: datos de contacto (recuerda cambiarlos también en el footer) -->
+        <ul class="contact-cards reveal">
+          <li>
+            <a class="contact-card" href="tel:+50240739801">
+              <span class="icon-box"><i class="fas fa-phone" aria-hidden="true"></i></span>
+              <span class="label">Teléfono</span>
+              <span class="value">+502 4073-9801</span>
+              <span class="action">Llamar</span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-card" href="mailto:seicaa@gmail.com">
+              <span class="icon-box"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+              <span class="label">Correo</span>
+              <span class="value">seicaa@gmail.com</span>
+              <span class="action">Escribir correo</span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-card" href="https://www.google.com/maps/search/?api=1&amp;query=7ma.+Avenida+4-41+Zona+4+Chiantla+Huehuetenango" target="_blank" rel="noopener">
+              <span class="icon-box"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
+              <span class="label">Dirección</span>
+              <span class="value">7ma. Avenida 4-41, Zona 4, Chuscaj Chiantla, Huehuetenango</span>
+              <span class="action">Ver en el mapa</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   </main>

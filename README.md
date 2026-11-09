@@ -21,11 +21,10 @@ npm run preview   # prueba la versión final en http://localhost:4173
 | Quiero cambiar… | Archivo |
 | --- | --- |
 | Proyectos (agregar, quitar, fotos, m²) | Panel de Pages CMS, o `src/data/proyectos.json` |
-| Formulario (Formspree) | `src/config.js` |
 | Textos, servicios, teléfono, cifras | `index.html` (busca los comentarios ✏️ EDITA) |
 | Colores, sombras, velocidad de animaciones | `src/styles/tokens.css` |
 | Estilos de una sección | `src/styles/<sección>.css` |
-| Comportamiento (menú, filtro, galería, formulario) | `src/modules/*.js` |
+| Comportamiento (menú, filtro, galería) | `src/modules/*.js` |
 
 ## Agregar proyectos desde el panel (recomendado)
 
@@ -90,7 +89,6 @@ public/                 archivos que se copian tal cual (fotos, favicon)
   img/proyectos/        fotos de los proyectos
 src/
   main.js               punto de entrada: carga estilos y módulos
-  config.js             Formspree y datos de contacto
   data/proyectos.json   lista de proyectos (la edita Pages CMS)
   modules/              un archivo por comportamiento
   styles/               un archivo por sección + tokens.css con las variables

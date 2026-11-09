@@ -142,7 +142,41 @@
   flex: 1;
   padding: 20px 22px 24px;
 }
-.project-year { font-size: .8rem; color: var(--color-secondary-text); font-weight: 600; margin-bottom: 4px; }
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.project-year { font-size: .8rem; color: var(--color-secondary-text); font-weight: 600; }
+.project-area {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+.project-area i { color: var(--color-secondary); font-size: .85em; }
+
+/* Cantidad de fotos (solo si hay más de una) */
+.project-photos {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(15, 25, 45, .62);
+  color: var(--color-white);
+  font-size: .78rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
 .project-info h3 { font-size: 1.05rem; font-weight: 700; line-height: 1.35; color: var(--color-primary); margin-bottom: 8px; }
 .project-open {
   all: unset;

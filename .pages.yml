@@ -1,0 +1,57 @@
+# Configuración de Pages CMS (https://app.pagescms.org)
+# Define el formulario para agregar y editar proyectos sin tocar código.
+# Las fotos que subas desde el panel se guardan en public/img/proyectos/
+
+media:
+  input: public/img/proyectos
+  output: /img/proyectos
+
+content:
+  - name: proyectos
+    label: Proyectos
+    type: file
+    path: src/data/proyectos.json
+    format: json
+    list: true
+    fields:
+      - name: titulo
+        label: Nombre corto (se ve en la tarjeta)
+        type: string
+        required: true
+      - name: nombre
+        label: Nombre oficial completo
+        type: text
+        required: true
+      - name: anio
+        label: Año de conclusión
+        type: number
+        required: true
+        options:
+          min: 1990
+      - name: tipo
+        label: Tipo de obra
+        type: select
+        required: true
+        options:
+          values: [Institucional, Residencial, Comercial, Industrial, Vial, Hidráulico, Otro]
+      - name: area
+        label: Metros cuadrados de construcción (déjalo vacío si no aplica)
+        type: number
+        options:
+          min: 0
+      - name: ubicacion
+        label: Ubicación
+        type: string
+        required: true
+      - name: descripcion
+        label: Descripción
+        type: text
+        required: true
+      - name: fotos
+        label: Fotos (la primera es la portada)
+        type: image
+        options:
+          multiple:
+            max: 12
+          extensions: [jpg, jpeg, png, webp]
+          rename: true

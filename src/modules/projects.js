@@ -1,22 +1,29 @@
 /* =====================================================
    PROYECTOS — tarjetas y filtro por año
-   Los datos viven en src/data/proyectos.js
+   Los datos viven en src/data/proyectos.json
    ===================================================== */
-import { PROYECTOS } from '../data/proyectos.js';
+import { PROYECTOS, formatArea } from './data.js';
 import { el, icon } from './utils.js';
 import { openProject, projectMedia } from './modal.js';
 
 function projectCard(proyecto, index) {
-  const openBtn = el('button', { class: 'project-open', type: 'button' }, proyecto.titulo || proyecto.nombre);
+  const openBtn = el('button', { class: 'project-open', type: 'button' }, proyecto.titulo);
+  const totalFotos = proyecto.fotos.length;
 
   const card = el('article', { class: 'project-card is-entering', style: `--i:${index}` }, [
     el('div', { class: 'project-media' }, [
       projectMedia(proyecto),
       el('span', { class: 'project-tag' }, proyecto.tipo),
+      totalFotos > 1 &&
+        el('span', { class: 'project-photos', 'aria-label': `${totalFotos} fotos` }, [icon('fas fa-images'), totalFotos]),
       el('span', { class: 'project-hint', 'aria-hidden': 'true' }, [icon('fas fa-eye'), 'Ver detalles']),
     ]),
     el('div', { class: 'project-info' }, [
-      el('p', { class: 'project-year' }, proyecto.anio),
+      el('div', { class: 'project-meta' }, [
+        el('span', { class: 'project-year' }, proyecto.anio),
+        proyecto.area &&
+          el('span', { class: 'project-area' }, [icon('fas fa-ruler-combined'), formatArea(proyecto.area)]),
+      ]),
       el('h3', {}, openBtn),
       el('p', { class: 'project-desc' }, proyecto.descripcion),
       el('p', { class: 'project-location' }, [icon('fas fa-map-marker-alt'), proyecto.ubicacion]),
@@ -34,11 +41,11 @@ export function initProjects() {
   const filterBar = document.getElementById('filter-bar');
   if (!grid || !filterBar) return;
 
-  // Más recientes primero
-  const proyectos = [...PROYECTOS].sort((a, b) => b.anio - a.anio || a.id - b.id);
+  // Más recientes primero; dentro del mismo año, en el orden del archivo
+  const proyectos = [...PROYECTOS].sort((a, b) => (b.anio ?? 0) - (a.anio ?? 0) || a.id - b.id);
 
   // Un botón por cada año que exista en los datos
-  const years = [...new Set(proyectos.map((p) => p.anio))];
+  const years = [...new Set(proyectos.map((p) => p.anio).filter(Boolean))];
   if (years.length > 1) {
     years.forEach((year) => {
       filterBar.append(

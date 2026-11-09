@@ -17,13 +17,3 @@ export const CONTACTO = {
   telefono: '+502 4073-9801',
   email: 'seicaa@gmail.com',
 };
-
-/**
- * Redes sociales: pega la URL completa de cada perfil.
- * Las que dejes vacías ('') no se muestran en la página.
- */
-export const REDES = {
-  facebook: '',
-  instagram: '',
-  linkedin: '',
-};

@@ -10,7 +10,6 @@ import { initCounters } from './modules/counters.js';
 import { initProjects } from './modules/projects.js';
 import { initModal } from './modules/modal.js';
 import { initContactForm } from './modules/contact-form.js';
-import { initSocial } from './modules/social.js';
 
 initNavbar();
 initReveal();
@@ -18,7 +17,6 @@ initCounters();
 initModal();
 initProjects();
 initContactForm();
-initSocial();
 
 // Año actual en el pie de página
 const year = document.getElementById('footer-year');

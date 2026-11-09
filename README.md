@@ -20,30 +20,55 @@ npm run preview   # prueba la versión final en http://localhost:4173
 
 | Quiero cambiar… | Archivo |
 | --- | --- |
-| Proyectos (agregar, quitar, fotos) | `src/data/proyectos.js` |
-| Formulario (Formspree), redes sociales | `src/config.js` |
+| Proyectos (agregar, quitar, fotos, m²) | Panel de Pages CMS, o `src/data/proyectos.json` |
+| Formulario (Formspree) | `src/config.js` |
 | Textos, servicios, teléfono, cifras | `index.html` (busca los comentarios ✏️ EDITA) |
 | Colores, sombras, velocidad de animaciones | `src/styles/tokens.css` |
 | Estilos de una sección | `src/styles/<sección>.css` |
-| Comportamiento (menú, filtro, detalle, formulario) | `src/modules/*.js` |
+| Comportamiento (menú, filtro, galería, formulario) | `src/modules/*.js` |
 
-## Cómo subir fotos de proyectos
+## Agregar proyectos desde el panel (recomendado)
 
-1. **Prepara la foto.** Usa un ancho de 1600 px como máximo y procura que pese menos de 300 KB. En [squoosh.app](https://squoosh.app) puedes reducirla y convertirla a WebP gratis.
-2. **Ponle un nombre simple**: minúsculas, sin espacios, sin tildes ni ñ.
-   Bien: `puesto-salud-la-laguna.webp`. Mal: `Foto Puesto Salud Ñ (1).JPG`
-3. **Cópiala a la carpeta** `public/img/proyectos/`
-4. **Escribe la ruta en el proyecto**, dentro de `src/data/proyectos.js`:
+El sitio está configurado para [Pages CMS](https://pagescms.org), un panel gratuito que edita el repositorio de GitHub por ti. La configuración del formulario está en `.pages.yml`.
 
-   ```js
-   imagen: '/img/proyectos/puesto-salud-la-laguna.webp',
-   ```
+Configuración (solo una vez):
 
-   La ruta empieza con `/img/...`. No lleva `public` ni `C:\Users\...`: Vite sirve todo lo de `public/` desde la raíz del sitio.
-5. **Revisa** con `npm run dev`. Si la foto no aparece, revisa que el nombre coincida exactamente, incluidas mayúsculas y la extensión (`.jpg` y `.JPG` son distintos en Vercel).
-6. **Publica** (ver abajo).
+1. Entra a [app.pagescms.org](https://app.pagescms.org) e inicia sesión con GitHub.
+2. Instala la GitHub App en tu cuenta y dale acceso al repositorio `seicaa`.
+3. Abre el repositorio `seicaa`. Verás la sección **Proyectos**.
 
-Si un proyecto todavía no tiene foto, deja `imagen: ''` y la tarjeta muestra "Fotografía próximamente".
+Para agregar un proyecto:
+
+1. En **Proyectos**, agrega un elemento nuevo.
+2. Llena el nombre corto, el nombre oficial, el año, el tipo, los metros cuadrados, la ubicación y la descripción.
+3. Sube las fotos. La primera es la portada de la tarjeta.
+4. Guarda. Pages CMS hace el commit en GitHub y Vercel publica la página en uno o dos minutos.
+
+Antes de subir una foto, redúcela a unos 1600 px de ancho y menos de 300 KB. [squoosh.app](https://squoosh.app) lo hace gratis y la convierte a WebP. Así la página carga rápido con datos móviles.
+
+Si haces cambios desde el panel, ejecuta `git pull` en tu computadora antes de editar ahí, para traer lo que el panel guardó.
+
+## Agregar proyectos a mano
+
+Edita `src/data/proyectos.json`. Cada proyecto es un bloque así; copia uno, pégalo después de una coma y cambia los valores:
+
+```json
+{
+  "titulo": "Puesto de salud, Caserío La Laguna",
+  "nombre": "Construcción Puesto de Salud Caserío La Laguna, Aldea Paquix, Chiantla, Huehuetenango",
+  "anio": 2025,
+  "tipo": "Institucional",
+  "area": 186,
+  "ubicacion": "Caserío La Laguna, Aldea Paquix, Chiantla, Huehuetenango",
+  "descripcion": "Construcción del puesto de salud…",
+  "fotos": ["/img/proyectos/puesto-salud-1.webp", "/img/proyectos/puesto-salud-2.webp"]
+}
+```
+
+- `area`: escribe solo el número (sin "m²"). Usa `null` si no aplica, por ejemplo en un camino.
+- `fotos`: guarda cada foto en `public/img/proyectos/`. En el JSON escribe la ruta empezando con `/img/proyectos/`, sin `public`. La primera foto es la portada. Usa `[]` si todavía no hay fotos.
+- Nombres de archivo en minúsculas, sin espacios ni tildes. Vercel distingue `.jpg` de `.JPG`.
+- JSON no admite comas sobrantes: el último proyecto no lleva coma después de su `}`.
 
 Las fotos del inicio y de "Nosotros" vienen de Unsplash. Para usar fotos propias, guárdalas en `public/img/` y cambia la URL en `src/styles/hero.css` (inicio) o en `index.html` (Nosotros) por `/img/tu-foto.webp`.
 
@@ -65,9 +90,10 @@ public/                 archivos que se copian tal cual (fotos, favicon)
   img/proyectos/        fotos de los proyectos
 src/
   main.js               punto de entrada: carga estilos y módulos
-  config.js             Formspree, redes sociales, contacto
-  data/proyectos.js     lista de proyectos
+  config.js             Formspree y datos de contacto
+  data/proyectos.json   lista de proyectos (la edita Pages CMS)
   modules/              un archivo por comportamiento
   styles/               un archivo por sección + tokens.css con las variables
 vercel.json             le indica a Vercel cómo compilar (Vite → dist/)
+.pages.yml              formulario de proyectos para Pages CMS
 ```

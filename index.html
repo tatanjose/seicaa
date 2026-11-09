@@ -78,7 +78,7 @@
             </div>
             <div class="hero-stat-item">
               <dt class="label">Proyectos completados</dt>
-              <dd class="number" data-target="120">120+</dd>
+              <dd class="number" data-target="50">50+</dd>
             </div>
             <div class="hero-stat-item">
               <dt class="label">Clientes satisfechos</dt>
@@ -203,7 +203,7 @@
     </section>
 
     <!-- ==================== PROYECTOS ==================== -->
-    <!-- Las tarjetas se generan desde src/data/proyectos.js -->
+    <!-- Las tarjetas se generan desde src/data/proyectos.json -->
     <section id="proyectos" class="section section--white" aria-labelledby="projects-title">
       <div class="container">
         <header class="section-header reveal">
@@ -256,8 +256,6 @@
                 </div>
               </li>
             </ul>
-            <!-- Las redes se llenan desde src/config.js; si no hay ninguna, este bloque no aparece -->
-            <div class="social-links" id="social-links" hidden></div>
           </div>
 
           <div class="reveal">
@@ -319,6 +317,7 @@
       </button>
       <div class="modal-scroll">
       <div class="modal-media" id="modal-media"></div>
+      <div class="modal-thumbs" id="modal-thumbs" role="group" aria-label="Fotos del proyecto" hidden></div>
       <div class="modal-body">
         <div class="modal-meta">
           <span class="modal-tag tipo" id="modal-tipo"></span>
@@ -326,10 +325,16 @@
         </div>
         <h2 id="modal-title"></h2>
         <p class="modal-desc" id="modal-desc"></p>
-        <p class="modal-location">
-          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-          <span id="modal-location"></span>
-        </p>
+        <dl class="modal-facts">
+          <div id="modal-area-row">
+            <dt><i class="fas fa-ruler-combined" aria-hidden="true"></i>Área de construcción</dt>
+            <dd id="modal-area"></dd>
+          </div>
+          <div>
+            <dt><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Ubicación</dt>
+            <dd id="modal-location"></dd>
+          </div>
+        </dl>
       </div>
       </div>
     </div>

@@ -9,11 +9,13 @@ import { initReveal } from './modules/reveal.js';
 import { initCounters } from './modules/counters.js';
 import { initProjects } from './modules/projects.js';
 import { initModal } from './modules/modal.js';
+import { initShare } from './modules/share.js';
 
 initNavbar();
 initReveal();
 initCounters();
 initModal();
+initShare();
 initProjects();
 
 // Año actual en el pie de página

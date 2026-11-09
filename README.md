@@ -22,6 +22,8 @@ npm run preview   # prueba la versión final en http://localhost:4173
 | --- | --- |
 | Proyectos (agregar, quitar, fotos, m²) | Panel de Pages CMS, o `src/data/proyectos.json` |
 | Textos, servicios, teléfono, cifras | `index.html` (busca los comentarios ✏️ EDITA) |
+| Teléfono, correo y dirección para Google | `site.config.js` (y también en `index.html` y `proyecto.html`) |
+| Diseño de la página de cada proyecto | `proyecto.html`, `build/paginas.js`, `src/styles/proyecto.css` |
 | Colores, sombras, velocidad de animaciones | `src/styles/tokens.css` |
 | Estilos de una sección | `src/styles/<sección>.css` |
 | Comportamiento (menú, filtro, galería) | `src/modules/*.js` |
@@ -71,6 +73,24 @@ Edita `src/data/proyectos.json`. Cada proyecto es un bloque así; copia uno, pé
 
 Las fotos del inicio y de "Nosotros" vienen de Unsplash. Para usar fotos propias, guárdalas en `public/img/` y cambia la URL en `src/styles/hero.css` (inicio) o en `index.html` (Nosotros) por `/img/tu-foto.webp`.
 
+## Página de cada proyecto
+
+Cada proyecto tiene su propia página, por ejemplo `/proyectos/puesto-de-salud-caserio-la-laguna`. Se crean solas al compilar a partir de `src/data/proyectos.json`: al agregar un proyecto en Pages CMS, su página aparece en la siguiente publicación.
+
+- La dirección sale del **nombre corto**. Si después lo cambias, la dirección también cambia y el enlace anterior deja de funcionar.
+- Al compartir esa dirección por WhatsApp o Facebook se ve la primera foto del proyecto. Si no tiene fotos, se usa `public/og-image.jpg`.
+- El detalle de la página de inicio tiene los botones **Ver página del proyecto** y **Compartir**.
+
+## Google
+
+Al compilar se generan solos:
+
+- **Vista previa al compartir** (título, descripción e imagen) para el inicio y para cada proyecto.
+- **Datos de la empresa** para Google (nombre, dirección, teléfono, servicios), tomados de `site.config.js`.
+- **`/sitemap.xml`** con todas las páginas, y **`/robots.txt`**.
+
+La dirección del sitio la toma Vercel sola, y cambia sola si conectas un dominio propio.
+
 ## Publicar cambios
 
 El repositorio está conectado a Vercel: cada `git push` a la rama `main` publica la página sola en uno o dos minutos.
@@ -84,8 +104,12 @@ git push
 ## Estructura
 
 ```
-index.html              estructura de la página
-public/                 archivos que se copian tal cual (fotos, favicon)
+index.html              estructura de la página de inicio
+proyecto.html           plantilla de la página de cada proyecto
+site.config.js          datos de la empresa para Google y para compartir
+vite.config.js          crea las páginas de proyectos, sitemap y robots al compilar
+build/paginas.js        el HTML de cada página de proyecto
+public/                 archivos que se copian tal cual (fotos, favicon, og-image.jpg)
   img/proyectos/        fotos de los proyectos
 src/
   main.js               punto de entrada: carga estilos y módulos

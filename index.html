@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEICAA - Empresa Constructora Guatemala</title>
-  <meta name="description" content="SEICAA - Empresa constructora con 26 años de experiencia en Guatemala. Construcción, Remodelación, Ingeniería Civil y más." />
+  <title>SEICAA - Empresa Constructora en Huehuetenango, Guatemala</title>
+  <meta name="description" content="Empresa constructora con 26 años de experiencia en Guatemala. Construcción, remodelación, ingeniería civil, venta de agregados y renta de maquinaria en Huehuetenango." />
   <meta name="keywords" content="constructora Guatemala, ingeniería civil, construcción, SEICAA, remodelación, maquinaria, Huehuetenango" />
   <meta name="author" content="SEICAA" />
   <meta name="theme-color" content="#1F3A70" />
-  <meta property="og:title" content="SEICAA - 26 Años Construyendo Guatemala" />
-  <meta property="og:description" content="Soluciones integrales en Ingeniería Civil y Construcción" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_GT" />
+  <!-- Vista previa al compartir (WhatsApp, Facebook) y datos para Google:
+       los agrega vite.config.js al compilar, con la dirección real del sitio -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <!-- Marca la página como "con JavaScript" antes de pintar, para que las animaciones no parpadeen -->
@@ -266,8 +264,7 @@
         <i class="fas fa-times" aria-hidden="true"></i>
       </button>
       <div class="modal-scroll">
-      <div class="modal-media" id="modal-media"></div>
-      <div class="modal-thumbs" id="modal-thumbs" role="group" aria-label="Fotos del proyecto" hidden></div>
+      <div class="gallery gallery--modal" id="modal-gallery"></div>
       <div class="modal-body">
         <div class="modal-meta">
           <span class="modal-tag tipo" id="modal-tipo"></span>
@@ -285,6 +282,14 @@
             <dd id="modal-location"></dd>
           </div>
         </dl>
+        <div class="modal-actions">
+          <a class="btn btn-primary" id="modal-page" href="/">
+            <i class="fas fa-file-alt" aria-hidden="true"></i> Ver página del proyecto
+          </a>
+          <button class="btn btn-ghost" id="modal-share" type="button" data-share="">
+            <i class="fas fa-share-alt" aria-hidden="true"></i> <span>Compartir</span>
+          </button>
+        </div>
       </div>
       </div>
     </div>

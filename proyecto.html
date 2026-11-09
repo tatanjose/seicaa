@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    PLANTILLA DE LA PÁGINA DE CADA PROYECTO.
+    No se publica tal cual: al compilar, vite.config.js crea una copia por
+    cada proyecto de src/data/proyectos.json y rellena los dos espacios
+    marcados con PROYECTO-HEAD y PROYECTO-BODY.
+  -->
+  <!--PROYECTO-HEAD-->
+  <meta name="theme-color" content="#1F3A70" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="page-proyecto">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header id="navbar" class="navbar navbar--solid">
+    <nav class="container nav-inner" aria-label="Menú principal">
+      <a href="/" class="nav-logo" aria-label="SEICAA, ir al inicio">SEI<span>CAA</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/#sobre-nosotros">Nosotros</a></li>
+        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/#proyectos" aria-current="true">Proyectos</a></li>
+        <li><a href="/#contacto" class="nav-cta">Contacto</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!--PROYECTO-BODY-->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">SEI<span>CAA</span></div>
+          <p>26 años construyendo el futuro de Guatemala con calidad, integridad y compromiso en cada proyecto.</p>
+        </div>
+        <nav class="footer-col" aria-label="Navegación del pie de página">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#sobre-nosotros">Sobre nosotros</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/#proyectos">Proyectos</a></li>
+            <li><a href="/#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="/#servicios">Construcción</a></li>
+            <li><a href="/#servicios">Remodelación</a></li>
+            <li><a href="/#servicios">Venta de agregados</a></li>
+            <li><a href="/#servicios">Renta de maquinaria</a></li>
+            <li><a href="/#servicios">Asesoría técnica</a></li>
+            <li><a href="/#servicios">Ingeniería civil</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <!-- ✏️ EDITA: datos de contacto -->
+          <ul class="footer-contact">
+            <li><a href="tel:+50240739801"><i class="fas fa-phone" aria-hidden="true"></i>+502 4073-9801</a></li>
+            <li><a href="mailto:seicaa@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i>seicaa@gmail.com</a></li>
+            <li><a href="/#contacto"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Chiantla, Huehuetenango</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year">2026</span> SEICAA. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/proyecto.js"></script>
+</body>
+</html>

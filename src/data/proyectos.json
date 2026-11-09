@@ -10,5 +10,37 @@
     "fotos": [
       "/img/proyectos/whatsapp-image-2026-11-09-at-121247-pm.jpg"
     ]
+  },
+  {
+    "titulo": "Escuela primaria, Caserío Carbonero",
+    "nombre": "Construcción Escuela Primaria Oficial Rural Mixta, Caserío Carbonero, Aldea Sacpic, Santa Bárbara, Huehuetenango",
+    "anio": 2025,
+    "tipo": "Institucional",
+    "area": 315,
+    "ubicacion": "Yerbabuena, Aldea Sacpic, Santa Bárbara, Huehuetenango",
+    "descripcion": "Construcción de la escuela primaria del Caserío Carbonero, Aldea Sacpic, Santa Bárbara, Huehuetenango. La escuela contará con 3 aulas puras, cocina, dirección y módulos de baños con biodigestor y pozo de absorción.",
+    "fotos": [
+      "/img/proyectos/escuela-carbonero.webp"
+    ]
+  },
+  {
+    "titulo": "Camino rural, Caserío Yerbabuena",
+    "nombre": "Mejoramiento Camino Rural Caserío Yerbabuena, Aldea Sacpic, Santa Bárbara, Huehuetenango",
+    "anio": 2025,
+    "tipo": "Institucional",
+    "area": null,
+    "ubicacion": "Yerbabuena, Aldea Sacpic, Santa Bárbara, Huehuetenango",
+    "descripcion": "Mejoramiento del camino rural entre el Caserío Yerbabuena y la Aldea Sacpic, para mejorar la conectividad y facilitar el acceso entre las comunidades.",
+    "fotos": []
+  },
+  {
+    "titulo": "Puesto de salud, Caserío La Laguna",
+    "nombre": "Construcción Puesto de Salud Caserío La Laguna, Aldea Paquix, Chiantla, Huehuetenango",
+    "anio": 2025,
+    "tipo": "Institucional",
+    "area": 186,
+    "ubicacion": "Caserío La Laguna, Aldea Paquix, Chiantla, Huehuetenango",
+    "descripcion": "Construcción del puesto de salud del Caserío La Laguna, Aldea Paquix, Chiantla, Huehuetenango.",
+    "fotos": []
   }
 ]

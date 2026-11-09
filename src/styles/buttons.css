@@ -1,0 +1,63 @@
+/* =====================================================
+   BOTONES
+   ===================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 30px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1.2;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform var(--dur-press) var(--ease-out),
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease;
+}
+/* Respuesta inmediata al presionar */
+.btn:active { transform: scale(0.97); }
+.btn:disabled { cursor: default; opacity: .75; }
+.btn:disabled:active { transform: none; }
+
+.btn-primary {
+  background: var(--color-secondary-text);
+  color: var(--color-white);
+  box-shadow: 0 6px 18px rgba(201, 74, 24, .28);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, .85);
+}
+
+.btn-block { width: 100%; }
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background: var(--color-secondary-hover);
+    box-shadow: 0 8px 22px rgba(201, 74, 24, .34);
+  }
+  .btn-outline:hover {
+    background: var(--color-white);
+    border-color: var(--color-white);
+    color: var(--color-primary);
+  }
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, .35);
+  border-top-color: var(--color-white);
+  animation: spin 600ms linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }

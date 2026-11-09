@@ -1,0 +1,125 @@
+/* =====================================================
+   HERO
+   ===================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-white);
+  background:
+    linear-gradient(135deg, rgba(23, 44, 86, .92) 0%, rgba(31, 58, 112, .76) 58%, rgba(255, 107, 53, .48) 100%),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center / cover no-repeat;
+  background-color: var(--color-primary);
+}
+
+.hero-content {
+  max-width: 680px;
+  padding-top: calc(var(--nav-h) + 32px);
+  padding-bottom: 96px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 107, 53, .2);
+  border: 1px solid rgba(255, 107, 53, .55);
+  color: #FFD2BF;
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  font-size: .875rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: clamp(2.3rem, 5.6vw, 3.9rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+.hero-title .highlight { color: var(--color-secondary); }
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, .88);
+  margin-bottom: 40px;
+  max-width: 30em;
+}
+
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 64px;
+  flex-wrap: wrap;
+}
+.hero-stat-item {
+  display: flex;
+  flex-direction: column-reverse; /* número arriba, etiqueta abajo */
+  align-items: center;
+  text-align: center;
+}
+.hero-stat-item .number {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.hero-stat-item .label { font-size: .875rem; color: rgba(255, 255, 255, .8); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, .7);
+  font-size: .8rem;
+  padding: 6px 10px;
+  transition: color var(--dur-fast) ease;
+}
+.hero-scroll i { animation: nudge 2.4s var(--ease-in-out) infinite; }
+@keyframes nudge {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-scroll:hover { color: var(--color-white); }
+}
+
+/* -----------------------------------------------------
+   Única secuencia orquestada de la página: la entrada del hero.
+   Cada bloque tiene --i (0..4) para escalonarse 70 ms.
+   ----------------------------------------------------- */
+.js .hero-content > * {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.js .hero.is-ready .hero-content > * {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 70ms + 80ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .hero-content > * { transform: none; }
+  .hero-scroll i { animation: none; }
+}
+
+@media (max-width: 768px) {
+  .hero-stats { gap: 28px; margin-top: 48px; }
+  .hero-stat-item .number { font-size: 2rem; }
+  .hero-scroll { display: none; }
+}

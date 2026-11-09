@@ -1,0 +1,46 @@
+/* =====================================================
+   VARIABLES — edita aquí los colores y medidas
+   ===================================================== */
+:root {
+  /* Marca */
+  --color-primary:        #1F3A70; /* Azul corporativo */
+  --color-primary-deep:   #172C56; /* Azul para hover/fondos oscuros */
+  --color-secondary:      #FF6B35; /* Naranja de marca (iconos, cifras, detalles) */
+  --color-secondary-text: #C94A18; /* Naranja para texto y botones: cumple contraste AA con blanco */
+  --color-secondary-hover:#B03E10;
+
+  /* Neutros */
+  --color-light: #F5F5F5;
+  --color-white: #FFFFFF;
+  --color-dark:  #1A1A2E;
+  --color-text:  #3D3D47;
+  --color-muted: #63636E;
+  --color-line:  #E4E4E9;
+  --color-error: #C53030;
+  --color-ok:    #276749;
+
+  /* Sombras: tintadas con el azul de la marca para que no se vean grises */
+  --shadow-sm: 0 1px 2px rgba(23, 44, 86, .06), 0 2px 8px rgba(23, 44, 86, .06);
+  --shadow-md: 0 4px 12px rgba(23, 44, 86, .08), 0 12px 28px rgba(23, 44, 86, .10);
+  --shadow-lg: 0 8px 20px rgba(23, 44, 86, .10), 0 24px 56px rgba(23, 44, 86, .16);
+
+  /* Formas */
+  --radius-sm: 10px;
+  --radius:    14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Tipografía */
+  --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Movimiento: curvas fuertes de salida, nunca ease-in en la interfaz */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-press: 140ms;
+  --dur-fast:  180ms;
+  --dur-ui:    240ms;
+  --dur-reveal: 640ms;
+
+  /* Layout */
+  --nav-h: 72px;
+}

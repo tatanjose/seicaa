@@ -1,0 +1,198 @@
+/* =====================================================
+   PROYECTOS
+   ===================================================== */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 44px;
+}
+.filter-btn {
+  min-height: 44px;
+  padding: 8px 26px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-line);
+  background: var(--color-white);
+  color: var(--color-muted);
+  font-weight: 500;
+  font-size: .925rem;
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    transform var(--dur-press) var(--ease-out);
+}
+.filter-btn:active { transform: scale(0.97); }
+.filter-btn[aria-pressed='true'] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+@media (hover: hover) and (pointer: fine) {
+  .filter-btn[aria-pressed='false']:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--dur-ui) var(--ease-out),
+    box-shadow var(--dur-ui) ease;
+}
+.project-card:active { transform: scale(0.99); }
+.project-card:focus-within {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
+/* Entrada al filtrar: muestra qué cambió (lo dispara la persona) */
+.project-card.is-entering {
+  animation: card-in 360ms var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 45ms);
+}
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-card.is-entering { animation-name: fade-in; }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+}
+
+.project-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: var(--color-primary);
+}
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms var(--ease-out);
+}
+
+/* Proyecto sin foto: plano de obra en lugar de un hueco vacío */
+.project-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, .78);
+  font-size: .875rem;
+  background-color: var(--color-primary);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px;
+}
+.project-placeholder i { font-size: 1.8rem; color: var(--color-secondary); }
+
+.project-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--color-secondary-text);
+  color: var(--color-white);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.project-hint {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px 20px;
+  height: 60%;
+  background: linear-gradient(0deg, rgba(23, 44, 86, .85) 0%, transparent 100%);
+  color: var(--color-white);
+  font-size: .85rem;
+  font-weight: 600;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity var(--dur-ui) ease;
+  pointer-events: none;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 22px 24px;
+}
+.project-year { font-size: .8rem; color: var(--color-secondary-text); font-weight: 600; margin-bottom: 4px; }
+.project-info h3 { font-size: 1.05rem; font-weight: 700; line-height: 1.35; color: var(--color-primary); margin-bottom: 8px; }
+.project-open {
+  all: unset;
+  cursor: pointer;
+}
+/* Toda la tarjeta es clicable a través del botón del título */
+.project-open::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.project-open:focus-visible { outline: none; }
+.project-desc {
+  font-size: .875rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.project-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: .8rem;
+  color: var(--color-muted);
+  margin-top: auto;
+  padding-top: 14px;
+}
+.project-location i { color: var(--color-secondary); margin-top: 3px; }
+
+.projects-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-muted);
+  padding: 32px 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+  .project-card:hover .project-media img { transform: scale(1.05); }
+  .project-card:hover .project-hint { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,0 +1,115 @@
+/* =====================================================
+   RESET & BASE
+   ===================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html.is-locked { overflow: hidden; }
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; font: inherit; color: inherit; }
+h1, h2, h3, h4 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 3000;
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+.skip-link:focus { top: 12px; }
+
+/* =====================================================
+   UTILIDADES
+   ===================================================== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+.section { padding: 104px 0; }
+.section--white { background: var(--color-white); }
+.section--light { background: var(--color-light); }
+
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-header .section-subtitle { margin-inline: auto; }
+
+.eyebrow {
+  color: var(--color-secondary-text);
+  font-weight: 600;
+  font-size: .95rem;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  max-width: 34em;
+}
+
+.accent { color: var(--color-secondary-text); }
+
+/* =====================================================
+   APARICIÓN AL HACER SCROLL
+   Solo se oculta si hay JavaScript (clase .js en <html>),
+   así el contenido nunca queda invisible si algo falla.
+   ===================================================== */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out),
+    transform var(--dur-reveal) var(--ease-out);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* =====================================================
+   MOVIMIENTO REDUCIDO
+   Menos movimiento, no cero: se conservan los fundidos.
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { transform: none; }
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

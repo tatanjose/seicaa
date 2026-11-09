@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEICAA - Empresa Constructora Guatemala</title>
+  <meta name="description" content="SEICAA - Empresa constructora con 26 años de experiencia en Guatemala. Construcción, Remodelación, Ingeniería Civil y más." />
+  <meta name="keywords" content="constructora Guatemala, ingeniería civil, construcción, SEICAA, remodelación, maquinaria, Huehuetenango" />
+  <meta name="author" content="SEICAA" />
+  <meta name="theme-color" content="#1F3A70" />
+  <meta property="og:title" content="SEICAA - 26 Años Construyendo Guatemala" />
+  <meta property="og:description" content="Soluciones integrales en Ingeniería Civil y Construcción" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_GT" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Marca la página como "con JavaScript" antes de pintar, para que las animaciones no parpadeen -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (iconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header id="navbar" class="navbar">
+    <nav class="container nav-inner" aria-label="Menú principal">
+      <a href="#inicio" class="nav-logo" aria-label="SEICAA, ir al inicio">SEI<span>CAA</span></a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- ==================== HERO ==================== -->
+    <section id="inicio" class="hero" aria-label="Inicio">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-badge" style="--i:0">
+            <i class="fas fa-hard-hat" aria-hidden="true"></i>
+            Empresa constructora de confianza
+          </p>
+          <h1 class="hero-title" style="--i:1">
+            <span class="highlight">SEICAA</span>, 26 años<br />construyendo<br />Guatemala
+          </h1>
+          <p class="hero-subtitle" style="--i:2">
+            Soluciones integrales en Ingeniería Civil y Construcción. Calidad, compromiso y experiencia en cada obra.
+          </p>
+          <div class="hero-buttons" style="--i:3">
+            <a href="#proyectos" class="btn btn-primary">
+              <i class="fas fa-building" aria-hidden="true"></i> Ver proyectos
+            </a>
+            <a href="#contacto" class="btn btn-outline">
+              <i class="fas fa-phone" aria-hidden="true"></i> Contáctanos
+            </a>
+          </div>
+          <!-- ✏️ EDITA: cambia data-target y el número visible por tus cifras reales -->
+          <dl class="hero-stats" style="--i:4">
+            <div class="hero-stat-item">
+              <dt class="label">Años de experiencia</dt>
+              <dd class="number" data-target="26">26+</dd>
+            </div>
+            <div class="hero-stat-item">
+              <dt class="label">Proyectos completados</dt>
+              <dd class="number" data-target="120">120+</dd>
+            </div>
+            <div class="hero-stat-item">
+              <dt class="label">Clientes satisfechos</dt>
+              <dd class="number" data-target="85">85+</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <a class="hero-scroll" href="#sobre-nosotros" aria-label="Ir a Nosotros">
+        <span>Desplazar</span>
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ==================== SOBRE NOSOTROS ==================== -->
+    <section id="sobre-nosotros" class="section section--white" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image-wrap reveal">
+            <img
+              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=900&q=80"
+              alt="Equipo de SEICAA trabajando en obra"
+              width="900" height="600"
+              loading="lazy" decoding="async"
+            />
+            <div class="about-badge-img">
+              <span class="big">26</span>
+              <span class="small">años de<br />experiencia</span>
+            </div>
+          </div>
+          <div class="about-content reveal">
+            <p class="eyebrow">Quiénes somos</p>
+            <h2 class="section-title" id="about-title">Construimos con <span class="accent">calidad</span> y compromiso</h2>
+            <p class="about-text">
+              SEICAA es una empresa constructora con más de 26 años de experiencia en la ejecución de proyectos en Guatemala. Nos especializamos en Ingeniería Civil, brindando soluciones integrales desde la consultoría hasta la entrega de obras de calidad.
+            </p>
+            <p class="about-text">
+              Nuestro equipo de profesionales altamente capacitados garantiza la excelencia en cada proyecto, cumpliendo con los más altos estándares de calidad, seguridad y eficiencia en cada una de nuestras obras.
+            </p>
+            <ul class="valores-grid" aria-label="Nuestros valores">
+              <li class="valor-item"><i class="fas fa-medal" aria-hidden="true"></i> Calidad</li>
+              <li class="valor-item"><i class="fas fa-handshake" aria-hidden="true"></i> Integridad</li>
+              <li class="valor-item"><i class="fas fa-lightbulb" aria-hidden="true"></i> Innovación</li>
+              <li class="valor-item"><i class="fas fa-users" aria-hidden="true"></i> Compromiso</li>
+            </ul>
+            <a href="#contacto" class="btn btn-primary">Trabajemos juntos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ESTADÍSTICAS ==================== -->
+    <section id="stats" class="stats" aria-label="SEICAA en cifras">
+      <div class="container">
+        <!-- ✏️ EDITA: ajusta data-target y el número visible según tu empresa -->
+        <dl class="stats-grid">
+          <div class="stat-card">
+            <i class="fas fa-building" aria-hidden="true"></i>
+            <dt class="desc">Proyectos completados</dt>
+            <dd class="num" data-target="50">50+</dd>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-users" aria-hidden="true"></i>
+            <dt class="desc">Clientes satisfechos</dt>
+            <dd class="num" data-target="85">85+</dd>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i>
+            <dt class="desc">Años en el mercado</dt>
+            <dd class="num" data-target="26">26+</dd>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-hard-hat" aria-hidden="true"></i>
+            <dt class="desc">Colaboradores</dt>
+            <dd class="num" data-target="50">50+</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICIOS ==================== -->
+    <section id="servicios" class="section section--light" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Lo que hacemos</p>
+          <h2 class="section-title" id="services-title">Nuestros <span class="accent">servicios</span></h2>
+          <p class="section-subtitle">Ofrecemos soluciones completas para cada etapa de su proyecto de construcción.</p>
+        </header>
+        <ul class="services-grid reveal">
+          <li class="service-card">
+            <div class="service-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+            <h3>Construcción</h3>
+            <p>Ejecución de proyectos residenciales, comerciales e industriales con los más altos estándares de calidad y seguridad estructural.</p>
+          </li>
+          <li class="service-card">
+            <div class="service-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
+            <h3>Remodelación</h3>
+            <p>Rehabilitación y modernización de estructuras existentes, adaptando espacios a nuevas necesidades funcionales y estéticas.</p>
+          </li>
+          <li class="service-card">
+            <div class="service-icon"><i class="fas fa-truck-loading" aria-hidden="true"></i></div>
+            <h3>Venta de agregados</h3>
+            <p>Suministro de arena, grava, piedra y materiales de construcción de alta calidad para todo tipo de obra civil y arquitectónica.</p>
+          </li>
+          <li class="service-card">
+            <div class="service-icon"><i class="fas fa-tractor" aria-hidden="true"></i></div>
+            <h3>Renta de maquinaria</h3>
+            <p>Alquiler de equipos especializados para obra: excavadoras, grúas, mezcladoras y más, con operadores calificados disponibles.</p>
+          </li>
+          <li class="service-card">
+            <div class="service-icon"><i class="fas fa-drafting-compass" aria-hidden="true"></i></div>
+            <h3>Asesoría técnica</h3>
+            <p>Consultoría especializada en proyectos de Ingeniería Civil: estudios de suelo, diseño estructural, presupuesto y supervisión técnica.</p>
+          </li>
+          <li class="service-card">
+            <div class="service-icon"><i class="fas fa-hard-hat" aria-hidden="true"></i></div>
+            <h3>Ingeniería civil</h3>
+            <p>Diseño, supervisión y ejecución de obras civiles: carreteras, puentes, infraestructura hidráulica y proyectos de urbanización.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== PROYECTOS ==================== -->
+    <!-- Las tarjetas se generan desde src/data/proyectos.js -->
+    <section id="proyectos" class="section section--white" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Nuestro portafolio</p>
+          <h2 class="section-title" id="projects-title">Proyectos <span class="accent">realizados</span></h2>
+          <p class="section-subtitle">Filtra por año para explorar nuestra trayectoria de obra.</p>
+        </header>
+
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="Filtrar proyectos por año">
+          <button class="filter-btn" type="button" data-year="all" aria-pressed="true">Todos</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACTO ==================== -->
+    <section id="contacto" class="section section--light" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Hablemos</p>
+          <h2 class="section-title" id="contact-title">¿Tienes un <span class="accent">proyecto</span>?</h2>
+          <p class="section-subtitle">Contáctanos y nuestro equipo te brindará la asesoría que necesitas.</p>
+        </header>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <h3>Información de contacto</h3>
+            <p>Estamos disponibles para atenderte y responder todas tus consultas.</p>
+            <!-- ✏️ EDITA: datos de contacto (recuerda cambiarlos también en el footer y en src/config.js) -->
+            <ul class="contact-items">
+              <li class="contact-item">
+                <div class="icon-box"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                <div class="text">
+                  <strong>Teléfono</strong>
+                  <a href="tel:+50240739801">+502 4073-9801</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="icon-box"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                <div class="text">
+                  <strong>Email</strong>
+                  <a href="mailto:seicaa@gmail.com">seicaa@gmail.com</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="icon-box"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                <div class="text">
+                  <strong>Dirección</strong>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=7ma.+Avenida+4-41+Zona+4+Chiantla+Huehuetenango" target="_blank" rel="noopener">7ma. Avenida 4-41, Zona 4, Chuscaj Chiantla, Huehuetenango</a>
+                </div>
+              </li>
+            </ul>
+            <!-- Las redes se llenan desde src/config.js; si no hay ninguna, este bloque no aparece -->
+            <div class="social-links" id="social-links" hidden></div>
+          </div>
+
+          <div class="reveal">
+            <form class="contact-form" id="contact-form" novalidate>
+              <h3><i class="fas fa-paper-plane" aria-hidden="true"></i>Envíanos un mensaje</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cf-nombre">Nombre completo *</label>
+                  <input type="text" id="cf-nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" aria-describedby="err-nombre" required />
+                  <span class="error-msg" id="err-nombre">Escribe tu nombre.</span>
+                </div>
+                <div class="form-group">
+                  <label for="cf-email">Correo electrónico *</label>
+                  <input type="email" id="cf-email" name="email" placeholder="correo@ejemplo.com" autocomplete="email" inputmode="email" aria-describedby="err-email" required />
+                  <span class="error-msg" id="err-email">Escribe un correo válido, por ejemplo nombre@gmail.com.</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cf-telefono">Teléfono</label>
+                  <input type="tel" id="cf-telefono" name="telefono" placeholder="+502 0000-0000" autocomplete="tel" />
+                </div>
+                <div class="form-group">
+                  <label for="cf-servicio">Servicio de interés *</label>
+                  <select id="cf-servicio" name="servicio" aria-describedby="err-servicio" required>
+                    <option value="">Selecciona un servicio</option>
+                    <option>Construcción</option>
+                    <option>Remodelación</option>
+                    <option>Venta de agregados</option>
+                    <option>Renta de maquinaria</option>
+                    <option>Asesoría técnica</option>
+                    <option>Ingeniería civil</option>
+                    <option>Otro</option>
+                  </select>
+                  <span class="error-msg" id="err-servicio">Selecciona un servicio.</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cf-mensaje">Mensaje *</label>
+                <textarea id="cf-mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." aria-describedby="err-mensaje" required></textarea>
+                <span class="error-msg" id="err-mensaje">Escribe tu mensaje (al menos 10 caracteres).</span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" id="cf-submit">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i> <span>Enviar mensaje</span>
+              </button>
+              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Detalle de proyecto -->
+  <dialog class="modal" id="project-dialog" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Cerrar detalle">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <div class="modal-scroll">
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span class="modal-tag tipo" id="modal-tipo"></span>
+          <span class="modal-tag year" id="modal-year"></span>
+        </div>
+        <h2 id="modal-title"></h2>
+        <p class="modal-desc" id="modal-desc"></p>
+        <p class="modal-location">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span id="modal-location"></span>
+        </p>
+      </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">SEI<span>CAA</span></div>
+          <p>26 años construyendo el futuro de Guatemala con calidad, integridad y compromiso en cada proyecto.</p>
+        </div>
+        <nav class="footer-col" aria-label="Navegación del pie de página">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Construcción</a></li>
+            <li><a href="#servicios">Remodelación</a></li>
+            <li><a href="#servicios">Venta de agregados</a></li>
+            <li><a href="#servicios">Renta de maquinaria</a></li>
+            <li><a href="#servicios">Asesoría técnica</a></li>
+            <li><a href="#servicios">Ingeniería civil</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="footer-contact">
+            <li><a href="tel:+50240739801"><i class="fas fa-phone" aria-hidden="true"></i>+502 4073-9801</a></li>
+            <li><a href="mailto:seicaa@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i>seicaa@gmail.com</a></li>
+            <li><a href="#contacto"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Chiantla, Huehuetenango</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year">2026</span> SEICAA. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-top" class="back-top" type="button" aria-label="Volver al inicio">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

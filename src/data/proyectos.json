@@ -8,7 +8,11 @@
     "ubicacion": "SECTOR ARENAL, CASERÍO MAPA, ALDEA PALAJACHUJ, SAN SEBASTÍAN HUEHUETENANGO, HUEHUETENANGO.",
     "descripcion": "El proyecto “MEJORAMIENTO CAMINO RURAL, SECTOR ARENAL, CASERÍO MAPA, ALDEA PALAJACHUJ, SAN SEBASTIÁN HUEHUETENANGO, HUEHUETENANGO” consiste en la ejecución de trabajos de pavimentación del camino rural, con el propósito de mejorar las condiciones de movilidad y facilitar la comunicación y el acceso entre las comunidades del sector. Esta obra contribuirá a fortalecer la conectividad vial, mejorar el traslado de personas y productos, facilitar el acceso a servicios básicos y promover el desarrollo económico y social de la población, impulsando así el crecimiento y bienestar de los habitantes de la aldea y comunidades aledañas.",
     "fotos": [
-      "/img/proyectos/whatsapp-image-2026-11-09-at-121247-pm.jpg"
+      "/img/proyectos/whatsapp-image-2026-11-09-at-121247-pm.jpg",
+      "/img/proyectos/camino-palajachuj-2.webp",
+      "/img/proyectos/camino-palajachuj-3.webp",
+      "/img/proyectos/camino-palajachuj-1.webp",
+      "/img/proyectos/camino-palajachuj-4.webp"
     ]
   },
   {
@@ -28,10 +32,8 @@
     "nombre": "Mejoramiento Camino Rural Caserío Yerbabuena, Aldea Sacpic, Santa Bárbara, Huehuetenango",
     "anio": 2025,
     "tipo": "Institucional",
-    "area": null,
     "ubicacion": "Yerbabuena, Aldea Sacpic, Santa Bárbara, Huehuetenango",
-    "descripcion": "Mejoramiento del camino rural entre el Caserío Yerbabuena y la Aldea Sacpic, para mejorar la conectividad y facilitar el acceso entre las comunidades.",
-    "fotos": []
+    "descripcion": "Mejoramiento del camino rural entre el Caserío Yerbabuena y la Aldea Sacpic, para mejorar la conectividad y facilitar el acceso entre las comunidades."
   },
   {
     "titulo": "Puesto de salud, Caserío La Laguna",
@@ -40,7 +42,6 @@
     "tipo": "Institucional",
     "area": 186,
     "ubicacion": "Caserío La Laguna, Aldea Paquix, Chiantla, Huehuetenango",
-    "descripcion": "Construcción del puesto de salud del Caserío La Laguna, Aldea Paquix, Chiantla, Huehuetenango.",
-    "fotos": []
+    "descripcion": "Construcción del puesto de salud del Caserío La Laguna, Aldea Paquix, Chiantla, Huehuetenango."
   }
 ]
